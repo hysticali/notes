@@ -6,13 +6,10 @@ $set(generalSanitized
 	,$rreplace($rreplace(%generalFormat%,%rreplacePattern%,),\\s+, )
 )
 
-
 $if($gt(%albumartistsort%,),
     $if($eq(%albumartistsort%,Various Artists),Various Artists,%albumartistsort%),
     $if($gt(%artist%,),%artist%,Unknown Artist)
 ) - [$substr(%date%,0,4)-$if($gt($len($substr(%date%,5,2)),0),$substr(%date%,5,2),01)-$if($gt($len($substr(%date%,8,2)),0),$substr(%date%,8,2),01)] %album%$if($ne(%releasecountry%,US), $if(%releasecountry%, [%releasecountry%],),)$if($gt(%totaldiscs%,1),$if($gt(%discnumber%,0), [disc $num(%discnumber%,2)],),)
-
-
 
 /
 
